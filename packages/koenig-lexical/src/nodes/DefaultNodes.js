@@ -17,6 +17,7 @@ import {BookmarkNode} from './BookmarkNode';
 import {ButtonNode} from './ButtonNode';
 import {CallToActionNode} from './CallToActionNode';
 import {CalloutNode} from './CalloutNode';
+import {CarouselNode} from './carousel/CarouselNode';
 import {CodeBlockNode} from './CodeBlockNode';
 import {EmailCtaNode} from './EmailCtaNode';
 import {EmailNode} from './EmailNode';
@@ -56,6 +57,7 @@ const DEFAULT_NODES = [
     MarkdownNode,
     AudioNode,
     VideoNode,
+    CarouselNode,
     CalloutNode,
     HtmlNode,
     FileNode,

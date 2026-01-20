@@ -54,6 +54,7 @@ const KNOWN_CARDS = [
     'bookmark',
     'button',
     'callout',
+    'carousel',
     'codeblock',
     'email-cta',
     'email',

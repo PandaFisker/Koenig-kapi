@@ -12,6 +12,7 @@ import {BookmarkPlugin} from '../plugins/BookmarkPlugin';
 import {ButtonPlugin} from '../plugins/ButtonPlugin';
 import {CalloutPlugin} from '../plugins/CalloutPlugin';
 import {CardMenuPlugin} from '../plugins/CardMenuPlugin';
+import {CarouselPlugin} from './carousel/CarouselPlugin';
 import {EmailCtaPlugin} from '../plugins/EmailCtaPlugin';
 import {EmailPlugin} from '../plugins/EmailPlugin';
 import {EmbedPlugin} from '../plugins/EmbedPlugin';
@@ -46,6 +47,7 @@ export const AllDefaultPlugins = () => {
             <ImagePlugin />
             <GalleryPlugin />
             <VideoPlugin />
+            <CarouselPlugin />
             <MarkdownPlugin />
             <EmEnDashPlugin />
             <HorizontalRulePlugin />

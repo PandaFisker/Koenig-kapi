@@ -5,6 +5,7 @@ module.exports = [
     require('./email-cta'),
     require('./embed'),
     require('./gallery'),
+    require('./carousel'),
     require('./hr'),
     require('./html'),
     require('./image'),

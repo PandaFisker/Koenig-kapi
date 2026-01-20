@@ -8,6 +8,18 @@ export const HtmlOutputPlugin = ({html = '', setHtml}) => {
     const [editor] = useLexicalComposerContext();
     const isFirstRender = React.useRef(true);
 
+    const isEmptyLexicalHtml = React.useCallback((htmlString) => {
+        if (!htmlString) {
+            return true;
+        }
+
+        const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+        const bodyHtml = (doc.body?.innerHTML || '').trim();
+
+        // Lexical empty document output
+        return /^<p>(\s|&nbsp;|<br\s*\/?\s*>)*<\/p>$/i.test(bodyHtml);
+    }, []);
+
     React.useLayoutEffect(() => {
         if (!isFirstRender.current) {
             return;
@@ -44,15 +56,17 @@ export const HtmlOutputPlugin = ({html = '', setHtml}) => {
     const onChange = React.useCallback(() => {
         editor.update(() => {
             const htmlString = $generateHtmlFromNodes(editor, null);
+
             // htmlString will be an empty paragraph with line break if a caption is set and removed
-            const captionText = new DOMParser().parseFromString(htmlString, 'text/html').documentElement.textContent;
-            if (captionText) {
-                setHtml?.(htmlString);
-            } else {
+            // or the editor is otherwise empty.
+            if (isEmptyLexicalHtml(htmlString)) {
                 setHtml('');
+                return;
             }
+
+            setHtml?.(htmlString);
         });
-    }, [editor, setHtml]);
+    }, [editor, setHtml, isEmptyLexicalHtml]);
 
     return (
         <OnChangePlugin onChange={onChange}/>

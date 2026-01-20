@@ -20,6 +20,7 @@ import * as productCard from './cards/product';
 import * as softReturn from './cards/soft-return';
 import * as videoCard from './cards/video';
 import * as galleryCard from './cards/gallery';
+import * as carouselCard from './cards/carousel';
 
 export function createParserPlugins(_options = {}) {
     const defaults = {};
@@ -305,6 +306,7 @@ export function createParserPlugins(_options = {}) {
         softReturn.fromBr(options),
         removeLeadingNewline,
         galleryCard.fromKoenigCard(options),
+        carouselCard.fromKoenigCard(options),
         embedCard.fromFigureBlockquote(options), // I think these can contain images
         galleryCard.fromGrafGallery(options),
         galleryCard.fromSqsGallery(options),

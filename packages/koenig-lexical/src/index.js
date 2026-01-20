@@ -14,6 +14,7 @@ import CalloutPlugin from './plugins/CalloutPlugin';
 import CardMenuPlugin from './plugins/CardMenuPlugin';
 import DragDropPastePlugin from './plugins/DragDropPastePlugin';
 import DragDropReorderPlugin from './plugins/DragDropReorderPlugin';
+import CarouselPlugin from './plugins/carousel/CarouselPlugin';
 import EmojiPickerPlugin from './plugins/EmojiPickerPlugin';
 import ExternalControlPlugin from './plugins/ExternalControlPlugin';
 import FilePlugin from './plugins/FilePlugin';
@@ -75,6 +76,7 @@ export {
     CardMenuPlugin,
     DragDropPastePlugin,
     DragDropReorderPlugin,
+    CarouselPlugin,
     EmojiPickerPlugin,
     ExternalControlPlugin,
     FilePlugin,
